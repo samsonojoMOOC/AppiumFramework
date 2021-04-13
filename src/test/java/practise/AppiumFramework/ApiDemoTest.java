@@ -17,7 +17,7 @@ import pageObjects.Preferences;
 public class ApiDemoTest extends TestBase{
 
 @Test(dataProvider="InputData",dataProviderClass=TestData.class)
-public void apiDemoTest(String input) throws IOException, InterruptedException
+public void apiDemoTest(String input, String inp) throws IOException, InterruptedException
 {
 		// TODO Auto-generated method stub
 	service=startServer();

@@ -11,11 +11,13 @@ public class TestData {
 		Object[][] obj=new Object[][]
 				{
 			
-			{"hello"}, {"@#$%"}
+			{"Welcome to class"}, {"Happy testing"}, {"Lets begin salah"}
 				};
 				
 				return obj;
 				
 	}
+	
+
 
 }

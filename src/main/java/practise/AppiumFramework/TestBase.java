@@ -53,10 +53,17 @@ public static boolean checkIfServerIsRunnning(int port) {
 		}
 		return isServerRunning;
 	}
+static String device= System.getProperty("deviceName");
 public static void startEmulator() throws IOException, InterruptedException
 {
-
-	Runtime.getRuntime().exec(System.getProperty("user.dir")+"\\src\\main\\java\\resources\\startEmulator.bat");
+	if(device.equalsIgnoreCase("samodevice007")) {
+		Runtime.getRuntime().exec(System.getProperty("user.dir")+"\\src\\main\\java\\resources\\samodevice007.bat");
+	} else if(device.equalsIgnoreCase("samodevice")) {
+		Runtime.getRuntime().exec(System.getProperty("user.dir")+"\\src\\main\\java\\resources\\samodevice.bat");
+	} else if(device.equalsIgnoreCase("Pixel_API_27")) {
+		Runtime.getRuntime().exec(System.getProperty("user.dir")+"\\src\\main\\java\\resources\\pixelemulator.bat");		
+	}
+	
 	Thread.sleep(60000);
 }
 
@@ -75,12 +82,13 @@ FileInputStream fis=new FileInputStream(System.getProperty("user.dir")+"\\src\\m
      DesiredCapabilities capabilities = new DesiredCapabilities();
   //String device=(String) prop.get("device");
      
-    String device= System.getProperty("deviceName");
-  if(device.contains("samo"))
-  {
-  startEmulator();
+    //String device= System.getProperty("deviceName");
+  if(device.contains("samo")|| (device.contains("Pixel"))) {
+	  startEmulator();
   }
-     capabilities.setCapability(MobileCapabilityType.DEVICE_NAME, device);
+    
+  System.out.println("***************The Selected Device..... "+device+"***********************");
+  capabilities.setCapability(MobileCapabilityType.DEVICE_NAME, device);
     
      capabilities.setCapability(MobileCapabilityType.AUTOMATION_NAME,"uiautomator2");
      capabilities.setCapability(MobileCapabilityType.NEW_COMMAND_TIMEOUT,14);
