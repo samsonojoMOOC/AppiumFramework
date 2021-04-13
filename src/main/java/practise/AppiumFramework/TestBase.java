@@ -87,7 +87,7 @@ FileInputStream fis=new FileInputStream(System.getProperty("user.dir")+"\\src\\m
 	  startEmulator();
   }
     
-  System.out.println("***************The Selected Device..... "+device+"***********************");
+  System.out.println("***************The Selected Device..... "+device+"**************************");
   capabilities.setCapability(MobileCapabilityType.DEVICE_NAME, device);
     
      capabilities.setCapability(MobileCapabilityType.AUTOMATION_NAME,"uiautomator2");
