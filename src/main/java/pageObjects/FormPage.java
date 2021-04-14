@@ -38,6 +38,14 @@ public class FormPage {
 		return countrySelection;
 	}
 	
+	@AndroidFindBy(id="android:id/text1")
+	private WebElement myCountry;
+	
+	public WebDriver getMyCountry(){
+		System.out.println("Just kidding...");
+		return myCountry;
+	}
+	
 	
 	
 }
